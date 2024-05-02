@@ -2,13 +2,13 @@ import os
 from box.exceptions import BoxValueError
 import yaml
 from src.textSummarizer.logging import logger
-from ensure import ensure_annotation
+from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
 
 # @ensure_annotated is basically to enforce the type indicated by annotations when passing an argument that is not what was indicated to the function   
-@ensure_annotation
+@ensure_annotations
 def read_yaml(path_to_yaml: Path)-> ConfigBox:
     """
     Read a yaml file and return a ConfigBox object
@@ -31,7 +31,7 @@ def read_yaml(path_to_yaml: Path)-> ConfigBox:
         raise e
     
 
-@ensure_annotation
+@ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
     """ Create list of directories
 
@@ -46,7 +46,7 @@ def create_directories(path_to_directories: list, verbose=True):
             logger.info(f"Created directory: {path}")
 
 
-@ensure_annotation
+@ensure_annotations
 def get_size(path: Path) -> str:
     """ Get the size of a file
 
