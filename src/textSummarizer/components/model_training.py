@@ -49,7 +49,7 @@ class ModelTraining:
                           args=training_args,
                           tokenizer=tokenizer, 
                           data_collator=data_collector,
-                          train_dataset=dataset_samsum_pt["test"], 
+                          train_dataset=dataset_samsum_pt["train"], 
                           eval_dataset=dataset_samsum_pt["validation"])
         
         # Train the model
